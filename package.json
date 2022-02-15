@@ -1,0 +1,36 @@
+{
+  "name": "docato",
+  "version": "1.0.0",
+  "description": "teste para docato",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorbcls/docato.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorbcls/docato/issues"
+  },
+  "homepage": "https://github.com/victorbcls/docato#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "dotenv": "^16.0.0",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.15",
+    "puppeteer": "^13.2.0",
+    "request-promise": "^4.2.6",
+    "sequelize": "^6.16.0",
+    "sqlite3": "^5.0.2",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0",
+    "yarn": "^1.22.17"
+  }
+}

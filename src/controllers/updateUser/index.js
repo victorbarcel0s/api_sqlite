@@ -1,12 +1,21 @@
 const User = require('../../models/user')
 
-
+const crypto = require("crypto");
+const {
+    CRYPTO_ALG,
+    CRYPTO_SECRET, CRYPTO_TYPE
+} = process.env
+function criptografar(senha) {
+    const cipher = crypto.createCipher(CRYPTO_ALG, CRYPTO_SECRET)
+    cipher.update(senha);
+    return cipher.final(CRYPTO_TYPE)
+}
 async function updateUser(req, res) {
     const nome = req.body.nome;
     const cpf = req.body.cpf;
     const email = req.body.email;
     const username = req.body.username;
-    const senha = req.body.senha;
+    const senha = criptografar(req.body.senha);
 
     try {
         const user = await User.findByPk(cpf);

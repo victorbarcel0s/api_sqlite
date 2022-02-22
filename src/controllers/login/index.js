@@ -3,9 +3,19 @@ const jwt = require('jsonwebtoken');
 const {
     secret
 } = process.env
+const crypto = require("crypto");
+const {
+    CRYPTO_ALG,
+    CRYPTO_SECRET, CRYPTO_TYPE
+} = process.env
+function criptografar(senha) {
+    const cipher = crypto.createCipher(CRYPTO_ALG, CRYPTO_SECRET)
+    cipher.update(senha);
+    return cipher.final(CRYPTO_TYPE)
+}
 async function login(req, res) {
     const cpf = req.headers.cpf
-    const password = req.headers.password
+    const password = criptografar(req.headers.password)
     console.log(cpf)
     console.log(password)
 
